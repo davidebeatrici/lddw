@@ -115,11 +115,11 @@ int __impl_static_ldd(struct LDD_ARGS args, const LPCVOID fdat, const LPCWSTR fn
             if ((strncmp("ext-", namea, 4) == 0 || strncmp("api-", namea, 4) == 0) && !args.bViewAll)
                 continue;
 
-            MultiByteToWideChar(CP_UTF8, 0, namea, strlen(namea) + 1, namew, MAX_PATH_W);
+            MultiByteToWideChar(CP_UTF8, 0, namea, (int)strlen(namea) + 1, namew, MAX_PATH_W);
         }
 
         // check duplicates if `--flatten` enabled
-        if (args.bFlatten && !dict__add(dict, namew, (wcslen(namew) + 1) * sizeof(WCHAR)))
+        if (args.bFlatten && !dict__add(dict, namew, (int)(wcslen(namew) + 1) * sizeof(WCHAR)))
             continue;
 
         // print indents
