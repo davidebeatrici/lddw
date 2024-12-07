@@ -219,7 +219,7 @@ int __findlib(const LPCWSTR fname, const LPWSTR fpath, DWORD size)
         size_t namelen = wcslen(name);
         if (namelen < MAX_PATH_W)
         {
-            found = wcsnicmp(buf, name, namelen) == 0 && *(buf + namelen) == L'\\';
+            found = _wcsnicmp(buf, name, namelen) == 0 && *(buf + namelen) == L'\\';
             if (found)
             {
                 WCHAR tmpfile[MAX_PATH_W];
