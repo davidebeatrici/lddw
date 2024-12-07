@@ -20,7 +20,7 @@
 
 #define ARGBASE_MAX INT32_MAX
 
-int mainCRTStartup(void)
+int main(void)
 {
     int ret = 0;
 
