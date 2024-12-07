@@ -15,8 +15,6 @@
 #include <tchar.h>
 #include <tlhelp32.h>
 
-#include <unistd.h>
-
 #undef ERROR
 
 /* https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation */
